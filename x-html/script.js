@@ -29,7 +29,7 @@ ctx.fillText(
     canvas.height / 2 + 190
 );
 ctx.fillText(
-    " ❤️",
+    "❤️ ",
     canvas.width / 2,
     canvas.height / 2 + 280
 
