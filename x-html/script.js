@@ -24,12 +24,12 @@ ctx.textBaseline = "middle";
 
 // Dibuja el texto base para poder leer sus pixeles
 ctx.fillText(
-    "Vaya duerma",
+    "FELIZ CUMPLEAÑOS",
     canvas.width / 2,
     canvas.height / 2 + 190
 );
 ctx.fillText(
-    "❤️ ",
+    "MI AMOR❤️",
     canvas.width / 2,
     canvas.height / 2 + 280
 
@@ -46,6 +46,20 @@ const imageData = ctx.getImageData(
 // Array donde guardaremos todas las particulas
 const particles = [];
 
+//Array donde guardaremos las estrellas del fondo
+const stars = [];
+
+//Crea estrellas aleatorias
+for (let i = 0; i < 150; i++) {
+    stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.5,
+        speed: Math.random() * 0.3 + 0.1,
+        alpha: Math.random(),
+        alphaSpeed: Math.random() * 0.02 + 0.005
+    });
+}
 //movimiento con el mouse
 const mouse = {
     x: null,
@@ -126,6 +140,46 @@ function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const beat = 1 + Math.sin(Date.now() * 0.006) * 0.08;
 
+    //Dibuja todas las estrellas
+    for ( let star of stars) {
+
+        //Empieza un nuevo dibujo
+        ctx.beginPath();
+
+        //Dibuja una estrella (circulo pequeño)
+        ctx. arc(
+            star.x,
+            star.y,
+            star.radius,
+            0,
+            Math.PI * 2
+        );
+
+        //Color de las estrellas 
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
+
+        //dibuja la estrella
+        ctx.fill();
+
+        //Cambia el brillo
+        star.alpha += star.alphaSpeed;
+
+        //si llega muy brillante cambia la direccion
+        if (star.alpha >= 1 || star.alpha <= 0.2) {
+            star.alphaSpeed *= -1;
+        }
+
+        //Hace que la estrella baje lenta
+        star.y += star.speed;
+        
+        //Cuando sale de la pantalla vuelve arriba
+        if (star.y > canvas.height) {
+            star.y = 0;
+            star.x = Math.random() * canvas.width;
+        }
+    }
+
+
     // Recorre cada particula
     for (let particle of particles) {
 
@@ -175,7 +229,6 @@ function animate() {
 
 // Inicia la animacion
 animate();
-
 
 
 
