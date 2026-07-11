@@ -24,12 +24,12 @@ ctx.textBaseline = "middle";
 
 // Dibuja el texto base para poder leer sus pixeles
 ctx.fillText(
-    "MI CUMPLEAÑERA",
+    "SIEMPRE TE VOY A AMAR",
     canvas.width / 2,
     canvas.height / 2 + 190
 );
 ctx.fillText(
-    " PRECIOSA❤️",
+    "MI NIÑA LINDA❤️",
     canvas.width / 2,
     canvas.height / 2 + 280
 
