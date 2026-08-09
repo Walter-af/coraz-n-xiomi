@@ -24,12 +24,12 @@ ctx.textBaseline = "middle";
 
 // Dibuja el texto base para poder leer sus pixeles
 ctx.fillText(
-    "SIEMPRE TE VOY A AMAR",
+    "ESTABAS PRECIOSA",
     canvas.width / 2,
     canvas.height / 2 + 190
 );
 ctx.fillText(
-    "MI NIÑA LINDA❤️",
+    "ME ENCANTAS❤️",
     canvas.width / 2,
     canvas.height / 2 + 280
 
@@ -229,6 +229,7 @@ function animate() {
 
 // Inicia la animacion
 animate();
+
 
 
 
