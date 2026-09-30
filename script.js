@@ -24,12 +24,12 @@ ctx.textBaseline = "middle";
 
 // Dibuja el texto base para poder leer sus pixeles
 ctx.fillText(
-    "",
+    "TE AMO",
     canvas.width / 2,
     canvas.height / 2 + 190
 );
 ctx.fillText(
-    "DEADPOOL",
+    "MI NIÑA",
     canvas.width / 2,
     canvas.height / 2 + 280
 
